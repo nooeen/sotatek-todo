@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import taskContext from "../../contexts/task-context";
 import styles from "./Task.module.css";
 import getTodayDate from "../../utils/getTodayDate";
@@ -11,8 +11,23 @@ const Task = (props) => {
   const [checked, setChecked] = useState(false);
 
   const checkboxHandler = () => {
-    setChecked(!checked);
+    setChecked((prevState) => {
+      if (prevState) {
+        taskCtx.unCheckedTask(props.id);
+      } else {
+        taskCtx.addCheckedTask(props.id);
+      }
+      return !prevState;
+    });
   };
+
+  useEffect(() => {
+    if (taskCtx.checkedTasks.includes(props.id)) {
+      setChecked(true);
+    } else {
+      setChecked(false);
+    }
+  }, [props.id, taskCtx.checkedTasks]);
 
   const [taskName, setTaskName] = useState(props.name);
   const [taskDescription, setTaskDescription] = useState(props.description);
@@ -69,7 +84,12 @@ const Task = (props) => {
     <div className={styles.task}>
       <div>
         <div className={styles.nameCheckbox}>
-          <input type="checkbox" className={styles.checkbox} />
+          <input
+            type="checkbox"
+            className={styles.checkbox}
+            onChange={checkboxHandler}
+            checked={checked}
+          />
           <h1 className={styles.name}>{props.name}</h1>
         </div>
         <div className={styles.buttons}>

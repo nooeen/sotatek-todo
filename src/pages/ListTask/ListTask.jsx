@@ -1,24 +1,30 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import taskContext from "../../contexts/task-context";
 import styles from "./ListTask.module.css";
 import Task from "../../components/Task/Task";
+import "react-toastify/dist/ReactToastify.css";
 
 const ListTask = (props) => {
-  const taskCtx = useContext(taskContext);
-
-  const [query, setQuery] = useState("");
-  const [bulk, setBulk] = useState(false);
-
-  const queryHandler = (event) => {
-    setQuery(event.target.value);
-  };
-
   const navigate = useNavigate();
 
   const navigateToAdd = () => {
     navigate("/new");
   };
+
+  const taskCtx = useContext(taskContext);
+
+  const [query, setQuery] = useState("");
+
+  const queryHandler = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const [bulk, setBulk] = useState(false);
+
+  useEffect(() => {
+    taskCtx.checkedTasks.length > 0 ? setBulk(true) : setBulk(false);
+  }, [taskCtx.checkedTasks]);
 
   const tasks = taskCtx.tasks
     .filter((element) => {
@@ -51,7 +57,23 @@ const ListTask = (props) => {
         />
       ))}
       {bulk ? (
-        <div></div>
+        <div className={styles.bulk}>
+          <h1 className={styles.bulkTitle}>Bulk Action:</h1>
+          <div className={styles.buttons}>
+            <button
+              className={styles.doneButton}
+              onClick={taskCtx.clearCheckedTask}
+            >
+              Done
+            </button>
+            <button
+              className={styles.removeButton}
+              onClick={taskCtx.removeCheckedTask}
+            >
+              Remove
+            </button>
+          </div>
+        </div>
       ) : (
         <div>
           <button

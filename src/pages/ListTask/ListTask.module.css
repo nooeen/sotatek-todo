@@ -37,3 +37,78 @@
   border: 0px solid #fff;
   border-radius: 10px;
 }
+
+.bulk {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 1em;
+  padding: 1em 1em 1em 1em;
+  z-index: 1;
+  background-color: #e0e0e0;
+}
+
+.bulkTitle {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: normal;
+  width: 70%;
+  text-align: left;
+}
+
+.buttons {
+  text-align: right;
+  display: inline-block;
+  width: 30%;
+}
+
+.doneButton {
+  margin-right: 1em;
+  background-color: #2096f3;
+  border: 0px;
+  color: white;
+  padding: 1em 4em 1em 4em;
+  border-radius: 5px;
+}
+
+.removeButton {
+  margin-left: 1em;
+  background-color: #d9534f;
+  border: 0px;
+  color: white;
+  padding: 1em 4em 1em 4em;
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .bulkTitle {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: normal;
+    width: 50%;
+    text-align: left;
+  }
+
+  .buttons {
+    text-align: right;
+    display: inline-block;
+    width: 50%;
+  }
+
+  .doneButton {
+    margin-right: 0.1em;
+    background-color: #2096f3;
+    border: 0px;
+    color: white;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 5px;
+  }
+
+  .removeButton {
+    margin-left: 0.1em;
+    background-color: #d9534f;
+    border: 0px;
+    color: white;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 5px;
+  }
+}

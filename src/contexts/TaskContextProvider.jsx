@@ -5,6 +5,8 @@ import {
   removeLSItem,
 } from "../utils/handleLocalStorage";
 import taskContext from "./task-context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const TaskContextProvider = (props) => {
   const [tasks, setTasks] = useState([]);
@@ -23,6 +25,7 @@ const TaskContextProvider = (props) => {
       setLSItem("tasks", JSON.stringify([...prevState, task]));
       return [...prevState, task];
     });
+    toast("Task added!", { hideProgressBar: true });
   };
 
   const updateTaskHandler = (task) => {
@@ -34,6 +37,7 @@ const TaskContextProvider = (props) => {
       setLSItem("tasks", JSON.stringify([...tasks, task]));
       return [...tasks, task];
     });
+    toast("Task updated!", { hideProgressBar: true });
   };
 
   const removeTaskHandler = (id) => {
@@ -45,15 +49,30 @@ const TaskContextProvider = (props) => {
       setLSItem("tasks", JSON.stringify(tasks));
       return tasks;
     });
+    toast("Task removed!", { hideProgressBar: true });
   };
 
-  const addCheckedTask = () => {};
+  const addCheckedTask = (id) => {
+    setCheckedTasks((prevState) => {
+      return [...prevState, id];
+    });
+  };
 
-  const unCheckedTask = () => {};
+  const unCheckedTask = (id) => {
+    setCheckedTasks((prevState) => {
+      return prevState.filter((element) => element !== id);
+    });
+  };
 
-  const clearCheckedTask = () => {};
+  const clearCheckedTask = () => {
+    setCheckedTasks([]);
+  };
 
-  const removeCheckedTask = () => {};
+  const removeCheckedTask = () => {
+    checkedTasks.forEach((element) => removeTaskHandler(element));
+    setCheckedTasks([]);
+    toast("Tasks removed!", { hideProgressBar: true });
+  };
 
   return (
     <taskContext.Provider
@@ -69,6 +88,7 @@ const TaskContextProvider = (props) => {
         removeTask: removeTaskHandler,
       }}
     >
+      <ToastContainer />
       {props.children}
     </taskContext.Provider>
   );

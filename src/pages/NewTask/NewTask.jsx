@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 import getTodayDate from "../../utils/getTodayDate";
 import taskContext from "../../contexts/task-context";
@@ -56,8 +56,6 @@ const NewTask = (props) => {
     taskCtx.addTask(task);
     resetForm();
   };
-
-  useEffect(() => {}, [taskCtx.tasks]);
 
   return (
     <div className={styles.newTask}>
