@@ -1,0 +1,187 @@
+.task {
+  border: 1.5px solid black;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 1em;
+  padding: 0.2em 1em 0.2em 1em;
+  z-index: 1;
+}
+
+.nameCheckbox {
+  display: inline-block;
+  text-align: left;
+  width: 80%;
+}
+
+.name {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.checkbox {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.buttons {
+  text-align: right;
+  display: inline-block;
+  width: 20%;
+}
+
+.detailButton {
+  margin-right: 0.5em;
+  background-color: #01bcd4;
+  border: 0px;
+  color: white;
+  padding: 0.5em 2em 0.5em 2em;
+  border-radius: 5px;
+}
+
+.removeButton {
+  margin-left: 0.5em;
+  background-color: #d9534f;
+  border: 0px;
+  color: white;
+  padding: 0.5em 2em 0.5em 2em;
+  border-radius: 5px;
+}
+
+.form {
+  margin: 0px;
+  margin-top: 1em;
+  padding: 0px;
+  z-index: 2;
+  width: 100%;
+}
+
+.label {
+  float: left;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+.nameInput {
+  box-sizing: border-box;
+  margin-bottom: 2em;
+  border-style: solid;
+  border-color: #e0e0e0;
+  border-radius: 5px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 0.5em;
+  width: 100%;
+}
+
+.descriptionTextArea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  resize: vertical;
+  width: 100%;
+  margin-bottom: 2em;
+  border: 1.5px solid black;
+}
+
+.dueDateAndPriorityTable {
+  display: table;
+  width: 100%;
+}
+
+.dueDateAndPriorityRow {
+  display: table-row;
+  min-width: 100%;
+}
+
+.dueDateCell {
+  float: left;
+  display: table-cell;
+  width: 50%;
+}
+
+.priorityCell {
+  float: right;
+  display: table-cell;
+  width: 50%;
+}
+
+.dueDateInput {
+  float: left;
+  width: 90%;
+  padding: 1em;
+  border: 1.5px solid black;
+}
+
+.priorityInput {
+  float: left;
+  width: 100%;
+  padding: 1em;
+  border: 1.5px solid black;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: #5cb85c;
+  color: white;
+  border: 0px solid #fff;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .name {
+    font-size: 1em;
+    font-weight: normal;
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+  }
+
+  .buttons {
+    text-align: right;
+    display: inline-block;
+    width: 20%;
+  }
+
+  .detailButton {
+    margin-right: 0.1em;
+    background-color: #01bcd4;
+    border: 0px;
+    color: white;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 5px;
+  }
+
+  .removeButton {
+    margin-left: 0.1em;
+    background-color: #d9534f;
+    border: 0px;
+    color: white;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 5px;
+  }
+
+  .priorityCell {
+    float: right;
+    display: table-cell;
+    width: 40%;
+  }
+
+  .dueDateInput {
+    float: left;
+    width: 90%;
+    padding: 1em;
+    border: 1.5px solid black;
+  }
+
+  .priorityInput {
+    float: left;
+    width: 100%;
+    padding: 1em;
+    border: 1.5px solid black;
+  }
+}

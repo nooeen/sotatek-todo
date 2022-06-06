@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+
+.newTask {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.form {
+  padding: 20px;
+  width: 80%;
+  display: inline-block;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  font-size: 1em;
+}
+
+.label {
+  float: left;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+.nameInput {
+  box-sizing: border-box;
+  margin-bottom: 2em;
+  border-style: solid;
+  border-color: #e0e0e0;
+  border-radius: 5px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 0.5em;
+  width: 100%;
+}
+
+.descriptionTextArea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  resize: vertical;
+  width: 100%;
+  margin-bottom: 2em;
+  border: 1.5px solid black;
+}
+
+.dueDateAndPriorityTable {
+  display: table;
+  width: 100%;
+}
+
+.dueDateAndPriorityRow {
+  display: table-row;
+  min-width: 100%;
+}
+
+.dueDateCell {
+  float: left;
+  display: table-cell;
+  width: 50%;
+}
+
+.priorityCell {
+  float: right;
+  display: table-cell;
+  width: 50%;
+}
+
+.dueDateInput {
+  float: left;
+  width: 90%;
+  padding: 1em;
+  border: 1.5px solid black;
+}
+
+.priorityInput {
+  float: left;
+  width: 100%;
+  padding: 1em;
+  border: 1.5px solid black;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: 3em;
+  padding: 1em;
+  background-color: #5cb85c;
+  color: white;
+  border: 0px solid #fff;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .priorityCell {
+    float: right;
+    display: table-cell;
+    width: 40%;
+  }
+
+  .dueDateInput {
+    float: left;
+    width: 90%;
+    padding: 1em;
+    border: 1.5px solid black;
+  }
+
+  .priorityInput {
+    float: left;
+    width: 100%;
+    padding: 1em;
+    border: 1.5px solid black;
+  }
+}
