@@ -1,6 +1,7 @@
 # Sotatek To-do
 
 A simple to-do app
+
 [View deployment](https://sotatektodo.netlify.app)
 
 ## Getting Started
