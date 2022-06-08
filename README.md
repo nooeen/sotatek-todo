@@ -4,6 +4,12 @@ A simple to-do app
 
 [View deployment](https://sotatektodo.netlify.app)
 
+## Features
+
+- Built with React
+- Using Local Storage
+- Responsive
+
 ## Getting Started
 
 ### Executing program
