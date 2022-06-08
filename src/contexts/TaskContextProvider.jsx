@@ -40,7 +40,7 @@ const TaskContextProvider = (props) => {
     toast("Task updated!", { hideProgressBar: true });
   };
 
-  const removeTaskHandler = (id) => {
+  const removeTaskHandler = (id, isBulk = false) => {
     setTasks((prevState) => {
       removeLSItem("tasks");
       const tasks = prevState.filter((element) => {
@@ -49,7 +49,9 @@ const TaskContextProvider = (props) => {
       setLSItem("tasks", JSON.stringify(tasks));
       return tasks;
     });
-    toast("Task removed!", { hideProgressBar: true });
+    if (!isBulk) {
+      toast("Task removed!", { hideProgressBar: true });
+    }
   };
 
   const addCheckedTask = (id) => {
@@ -69,9 +71,13 @@ const TaskContextProvider = (props) => {
   };
 
   const removeCheckedTask = () => {
-    checkedTasks.forEach((element) => removeTaskHandler(element));
+    checkedTasks.forEach((element) => removeTaskHandler(element, true));
     setCheckedTasks([]);
     toast("Tasks removed!", { hideProgressBar: true });
+  };
+
+  const notifyUnfinishedForm = () => {
+    toast("Please finish the form!", { hideProgressBar: true });
   };
 
   return (
@@ -86,6 +92,7 @@ const TaskContextProvider = (props) => {
         addTask: addTaskHandler,
         updateTask: updateTaskHandler,
         removeTask: removeTaskHandler,
+        notifyUnfinishedForm: notifyUnfinishedForm,
       }}
     >
       <ToastContainer />

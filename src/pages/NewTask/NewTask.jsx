@@ -31,14 +31,15 @@ const NewTask = (props) => {
   const resetForm = () => {
     setTaskName("");
     setTaskDescription("");
-    setTaskPriority("");
-    setTaskDueDate("");
+    setTaskPriority("normal");
+    setTaskDueDate(getTodayDate());
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
     if (taskName === "" || taskDescription === "" || taskDueDate === "") {
+      taskCtx.notifyUnfinishedForm();
       return;
     }
 
