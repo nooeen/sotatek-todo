@@ -1,6 +1,6 @@
-# Sotatek To-do
+# Sotatek Todo
 
-A simple to-do app
+A simple todo app
 
 [View deployment](https://sotatektodo.netlify.app)
 
